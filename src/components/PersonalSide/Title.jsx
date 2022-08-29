@@ -6,7 +6,7 @@ import vectorRight from "../../assets/imgs/vectorRight.svg";
 const Title = ({ goPrev, goNext, title }) => {
     return (
         <div className='header flex justify-between pr-[30px]'>
-            <span className='text-[24px] text-[#F9F9F9] font-extrabold'>{title}</span>
+            <span className='text-[22px] text-[#F9F9F9] font-extrabold'>{title}</span>
             <img onClick={goPrev} className='cursor-pointer' src={vectorLeft} alt='vectorLeft'/>
             <img onClick={goNext} className='cursor-pointer' src={vectorRight} alt='vectorRight'/>
             <div className='flex w-[120px]'>

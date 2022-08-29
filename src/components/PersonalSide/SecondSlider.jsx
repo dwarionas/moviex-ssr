@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CustomRightSlidesTopRated = ({ title, ep, genre, background }) => {
+const SecondSlider = ({ title, ep, genre }) => {
     return (
-        <div className={`outline-0 border-[#2D2E34] border-[2px] p-[8px] mr-[20px] h-[150px] rounded-[12px] bg-[url(${background})]`}>
+        <div className={`outline-0 border-[#2D2E34] border-[2px] p-[8px] mr-[20px] h-[140px] rounded-[12px]`}>
             <div className=''>
                 <span className='text-[16px] font-extrabold text-[#F9F9F9]'>{title}</span>
                 <div className='flex justify-between mt-[25px]'>
@@ -11,10 +11,10 @@ const CustomRightSlidesTopRated = ({ title, ep, genre, background }) => {
                 </div>
             </div>
             <div className='flex justify-between mt-[10px]'>
-                <div className='parent cursor-pointer pt-[11px] pl-[19px] w-[70px] h-[50px] rounded-[12px]'>
-                    <span className='child text-[14px] font-extrabold text-[#F9f9f9]'>+</span>
+                <div className='parent cursor-pointer pl-[27px] w-[70px] h-[40px] rounded-[12px]'>
+                    <span className='child text-[27px] font-extrabold text-[#F9f9f9]'>+</span>
                 </div>
-                <div className='cursor-pointer pt-[11px] pl-[37px] bg-[#00B9AE] w-[135px] h-[50px] rounded-[12px]'>
+                <div className='cursor-pointer pt-[7px] pl-[37px] bg-[#00B9AE] w-[135px] h-[40px] rounded-[12px]'>
                     <span className='text-[18px] text-[#16181E] font-[800]'>Watch</span>
                 </div>
             </div>
@@ -22,4 +22,4 @@ const CustomRightSlidesTopRated = ({ title, ep, genre, background }) => {
     );
 };
 
-export default CustomRightSlidesTopRated;
+export default SecondSlider;

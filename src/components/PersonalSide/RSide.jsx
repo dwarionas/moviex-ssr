@@ -2,17 +2,19 @@ import React from 'react';
 
 import Slider from "react-slick";
 
-import CustomRightSlidesContinue from "./CustomRightSlidesContinue";
+import FirstSlider from "./FirstSlider";
+import Title from "./Title";
+import SecondSlider from "./SecondSlider";
+import ThirdSlide from "./ThirdSlide";
 
 import notification from '../../assets/imgs/notification.svg'
 import vectorDown from '../../assets/imgs/vectorDown.svg'
 import profilePicture from '../../assets/imgs/profile-picture.svg'
 import wanda from '../../assets/imgs/wanda.svg'
 import hulk from '../../assets/imgs/hulk.svg'
-import Title from "./Title";
-import CustomRightSlidesTopRated from "./CustomRightSlidesTopRated";
 
-const RightSide = () => {
+
+const RSide = () => {
 
     const settings = {
         dots: false,
@@ -30,44 +32,48 @@ const RightSide = () => {
     const topNext = () => topRef.current.slickNext();
     const topPrev = () => topRef.current.slickPrev();
 
+    const genresRef = React.useRef();
+    const genresNext = () => genresRef.current.slickNext();
+    const genresPrev = () => genresRef.current.slickPrev();
+
     return (
         <div className='RightSide w-[360px] bg-[#21242D] pt-[5px] pl-[30px]'>
             <div className='header flex justify-between mt-[8px] pr-[30px]'>
-                <div className='parent w-[50px] h-[50px] bg-[#F9F9F9] rounded-md pt-[10px]'>
-                    <img className='child m-0 m-auto cursor-pointer' src={notification} alt='notification'/>
+                <div className='parent w-[40px] h-[40px] bg-[#F9F9F9] rounded-md pt-[10px]'>
+                    <img className='child m-0 m-auto cursor-pointer w-[15px]' src={notification} alt='notification'/>
                 </div>
                 <div className='flex'>
                     <span className='mr-[15px] m-0 m-auto text-[#F9F9F9] text-[16px] font-extrabold cursor-pointer'>Samantha</span>
                     <img className='cursor-pointer mr-[15px]' src={vectorDown} alt='vector'/>
-                    <img className='' src={profilePicture} alt='profilePicture'/>
+                    <img className='w-[40px]' src={profilePicture} alt='profilePicture'/>
                 </div>
             </div>
 
             <div className='mt-[30px]'>
                 <Title goNext={continueNext} goPrev={continuePrev} title='Continue' />
                 <Slider className='mt-[10px]' ref={continueRef} {...settings}>
-                    <CustomRightSlidesContinue
+                    <FirstSlider
                         index={1}
                         logo={wanda}
                         title='WandaVision'
                         episodesLeft='1 Episode left'
                     />
 
-                    <CustomRightSlidesContinue
+                    <FirstSlider
                         index={2}
                         logo={hulk}
                         title='Hulk'
                         episodesLeft='1 Episode left'
                     />
 
-                    <CustomRightSlidesContinue
+                    <FirstSlider
                         index={3}
                         logo={wanda}
                         title='WandaVision'
                         episodesLeft='1 Episode left'
                     />
 
-                    <CustomRightSlidesContinue
+                    <FirstSlider
                         index={4}
                         logo={hulk}
                         title='Hulk'
@@ -79,17 +85,41 @@ const RightSide = () => {
 
             <div className='mt-[30px]'>
                 <Title goNext={topNext} goPrev={topPrev} title='Top Rated' />
-                <Slider className='mt-[10px]' ref={topRef} {...settings}>
-                    <CustomRightSlidesTopRated
+                <Slider className='mt-10px]' ref={topRef} {...settings}>
+                    <SecondSlider
                         title='Supernatural'
                         ep='320 Ep'
                         genre='Horror, Fantasy'
-                        background='../../assets/imgs/supernatural.png'
                     />
+                    <SecondSlider
+                        title='Rick and Morty'
+                        ep='49 Ep'
+                        genre='Horror, Fantasy'
+                    />
+                    <SecondSlider
+                        title='Supernatural'
+                        ep='320 Ep'
+                        genre='Horror, Fantasy'
+                    />
+                    <SecondSlider
+                        title='Rick and Morty'
+                        ep='49 Ep'
+                        genre='Horror, Fantasy'
+                    />
+                </Slider>
+            </div>
+
+            <div className='mt-[30px]'>
+                <Title goNext={genresNext} goPrev={genresPrev} title='Genres' />
+                <Slider className='mt-[10px]' ref={genresRef} {...settings}>
+                    <ThirdSlide title='Sitcom' />
+                    <ThirdSlide title='Detective' />
+                    <ThirdSlide title='Documental' />
+                    <ThirdSlide title='Drama' />
                 </Slider>
             </div>
         </div>
     );
 };
 
-export default RightSide;
+export default RSide;

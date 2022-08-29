@@ -4,7 +4,7 @@ import Icon from "../Icon";
 
 import logo from '../../assets/imgs/logo.svg'
 
-const LeftSide = () => {
+const NavigationSide = () => {
     return (
         <div className='LeftSide pl-[30px] w-[252px] bg-[#21242D] border-x-[#2D2E34] border-r'>
             <img className='mt-[20px]' src={logo} alt='Logo' />
@@ -90,4 +90,4 @@ const LeftSide = () => {
     );
 };
 
-export default LeftSide;
+export default NavigationSide;

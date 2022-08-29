@@ -12,17 +12,9 @@ import semistar from '../../assets/imgs/semistar.svg'
 
 import prevbtn from '../../assets/imgs/prevbtn.svg'
 import nextbtn from '../../assets/imgs/nextbtn.svg'
+import MultiSlider from "./MultiSlider";
 
 const MainContent = () => {
-    const multiSlider = {
-        dots: false,
-        infinite: false,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        arrows: false,
-        adaptiveHeight: true,
-    };
-
     const singleSlider = {
         arrows: false,
         dots: true,
@@ -43,6 +35,15 @@ const MainContent = () => {
         )
     }
 
+    const multiSlider = {
+        dots: false,
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: false,
+        adaptiveHeight: true,
+    };
+
     const slideRef = React.useRef();
     const goNext = () => slideRef.current.slickNext();
     const goPrev = () => slideRef.current.slickPrev();
@@ -62,70 +63,6 @@ const MainContent = () => {
                 </div>
             </div>
 
-            <div className='mt-[25px] ml-[8px]'>
-                <img onClick={goPrev} className='w-[40px] z-30 absolute top-[220px] left-[340px]' src={prevbtn} alt='prev'/>
-                <div className='text-[#F9F9F9] text-[30px] absolute z-30 absolute top-[120px] left-[360px]'>The Crown</div>
-                <Slider className='z-10' ref={slideRef} {...singleSlider}>
-                    <div className='outline-0'>
-                        <img src={crown} alt='img'/>
-                    </div>
-
-                    <div className='outline-0'>
-                        <img src={crown} alt='img'/>
-                    </div>
-                </Slider>
-
-                <div className='parent flex absolute z-30 absolute top-[370px] left-[340px] w-[140px] h-[45px]  rounded-[12px]'>
-                    <span className='child text-[30px] text-[#F9f9f9] m-0 m-auto'>+</span>
-                    <span className='child text-[20px] text-[#F9f9f9] font-[600] m-0 m-auto'>Watchlist</span>
-                </div>
-                <div className='flex absolute bg-[#00B9AE] z-30 absolute top-[370px] right-[445px] w-[140px] h-[45px]  rounded-[12px]'>
-                    <span className='text-[20px] text-[#16181E] font-[600] m-0 m-auto'>Watch Now</span>
-                </div>
-                <img onClick={goNext} className='w-[40px] z-30 absolute top-[220px] right-[450px]' src={nextbtn} alt='next'/>
-            </div>
-
-            <div className='mt-[15px]'>
-                <div className='mb-[15px] text-[20px] text-[#F9F9F9]'>Popular</div>
-                <Slider {...multiSlider}>
-                    <div className='outline-0 w-[170px]'>
-                        <div className='absolute mt-[10px] ml-[10px] text-[#F9F9F9] text-[20px] font-[600]'>Loki</div>
-                        <div className='flex absolute mt-[40px] ml-[10px]'>
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={semistar} alt='semistar' />
-                        </div>
-                        <div className='parent flex z-30 absolute top-[150px] left-[10px] w-[50px] h-[50px] rounded-[12px]'>
-                            <span className='child text-[30px] text-[#F9f9f9] m-0 m-auto'>+</span>
-                        </div>
-                        <div className='flex absolute bg-[#00B9AE] z-30 absolute top-[150px] left-[70px] w-[90px] h-[50px] rounded-[12px]'>
-                            <span className='text-[18px] text-[#16181E] font-[800] m-0 m-auto'>Watch</span>
-                        </div>
-                        <img className='w-[170px]' src={loki} alt='loki'/>
-                    </div>
-
-                    <div className='outline-0 w-[170px]'>
-                        <div className='absolute mt-[10px] ml-[10px] text-[#F9F9F9] text-[20px] font-[600]'>Loki</div>
-                        <div className='flex absolute mt-[40px] ml-[10px]'>
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={star} alt='star' />
-                            <img src={semistar} alt='semistar' />
-                        </div>
-                        <img className='w-[170px]' src={loki} alt='loki'/>
-                        <div className='parent flex z-30 absolute top-[150px] left-[10px] w-[50px] h-[50px] rounded-[12px]'>
-                            <span className='child text-[30px] text-[#F9f9f9] m-0 m-auto'>+</span>
-                        </div>
-                        <div className='flex absolute bg-[#00B9AE] z-30 absolute top-[150px] left-[70px] w-[90px] h-[50px] rounded-[12px]'>
-                            <span className='text-[18px] text-[#16181E] font-[800] m-0 m-auto'>Watch</span>
-                        </div>
-                    </div>
-
-                </Slider>
-            </div>
 
 
         </div>

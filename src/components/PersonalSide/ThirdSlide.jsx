@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ThirdSlide = ({ title }) => {
+const ThirdSlide = ({ title, img }) => {
     return (
-        <div className={`outline-0 border-[#2D2E34] border-[2px] p-[8px] mr-[20px] h-[140px] rounded-[12px]`}>
-            <span className='block text-center mt-[40px] text-[16px] font-extrabold text-[#F9F9F9]'>{title}</span>
+        <div className='flex justify-center'>
+            <div className='absolute top-[53px] text-[16px] mr-[25px] font-extrabold text-[#F9F9F9]'>{title}</div>
+            <img className='h-[140px] rounded-[12px] mr-[25px]' src={img} alt='img'/>
         </div>
     );
 };

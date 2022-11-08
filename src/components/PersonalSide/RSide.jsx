@@ -12,6 +12,8 @@ import vectorDown from '../../assets/imgs/vectorDown.svg'
 import profilePicture from '../../assets/imgs/profile-picture.svg'
 import wanda from '../../assets/imgs/wanda.svg'
 import hulk from '../../assets/imgs/hulk.svg'
+import supernatural from '../../assets/imgs/supernatural.png'
+
 
 
 const RSide = () => {
@@ -90,21 +92,25 @@ const RSide = () => {
                         title='Supernatural'
                         ep='320 Ep'
                         genre='Horror, Fantasy'
+                        back={supernatural}
                     />
                     <SecondSlider
                         title='Rick and Morty'
                         ep='49 Ep'
                         genre='Horror, Fantasy'
+                        back={supernatural}
                     />
                     <SecondSlider
                         title='Supernatural'
                         ep='320 Ep'
                         genre='Horror, Fantasy'
+                        back={supernatural}
                     />
                     <SecondSlider
                         title='Rick and Morty'
                         ep='49 Ep'
                         genre='Horror, Fantasy'
+                        back={supernatural}
                     />
                 </Slider>
             </div>
@@ -112,10 +118,10 @@ const RSide = () => {
             <div className='mt-[30px]'>
                 <Title goNext={genresNext} goPrev={genresPrev} title='Genres' />
                 <Slider className='mt-[10px]' ref={genresRef} {...settings}>
-                    <ThirdSlide title='Sitcom' />
-                    <ThirdSlide title='Detective' />
-                    <ThirdSlide title='Documental' />
-                    <ThirdSlide title='Drama' />
+                    <ThirdSlide title='Sitcom' img={supernatural} />
+                    <ThirdSlide title='Detective' img={supernatural} />
+                    <ThirdSlide title='Documentary' img={supernatural} />
+                    <ThirdSlide title='Drama' img={supernatural} />
                 </Slider>
             </div>
         </div>

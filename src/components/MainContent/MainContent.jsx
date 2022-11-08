@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Slider from "react-slick";
+import MultiSlider from "./MultiSlider";
+import SingleSlider from "./SingleSlider";
 
 import crown from '../../assets/imgs/crown.png'
 import loki from '../../assets/imgs/loki.svg'
@@ -12,7 +14,7 @@ import semistar from '../../assets/imgs/semistar.svg'
 
 import prevbtn from '../../assets/imgs/prevbtn.svg'
 import nextbtn from '../../assets/imgs/nextbtn.svg'
-import MultiSlider from "./MultiSlider";
+
 
 const MainContent = () => {
     const singleSlider = {
@@ -26,7 +28,7 @@ const MainContent = () => {
         appendDots: dots => (
             <div
                 style={{
-                    borderRadius: "10px",
+                    borderRadius: "5px",
                     translate: '0px -50px',
                 }}
             >
@@ -63,8 +65,36 @@ const MainContent = () => {
                 </div>
             </div>
 
+            <div>
+                <img onClick={goPrev} className='absolute top-[220px] left-[338px] cursor-pointer z-50' src={prevbtn} alt='img' />
+                <Slider className='z-10'  ref={slideRef} {...singleSlider} >
+                    <SingleSlider img={crown} title='The Crown' />
+                    <SingleSlider img={crown} title='The Crown 2' />
+                    <SingleSlider img={crown} title='The Crown 3' />
+                </Slider>
+                <div className='z-50 parent cursor-pointer rounded-xl pl-[15px] pr-[15px] flex justify-between absolute top-[355px] ml-[20px] w-[150px] h-[50px]'>
+                    <span className='child text-[32px] font-bold'>+</span>
+                    <span className='child text-[18px] font-bold mt-[12px]'>Watchlist</span>
+                </div>
+                <div className='z-50 cursor-pointer bg-[#00B9AE] rounded-xl flex justify-center absolute top-[355px] ml-[615px] w-[150px] h-[50px]'>
+                    <span className='text-[#16181E] text-[18px] font-extrabold mt-[12px]'>Watch Now</span>
+                </div>
+                <img onClick={goNext} className='absolute top-[220px] right-[450px] cursor-pointer z-50' src={nextbtn} alt='img' />
+            </div>
 
-
+            <div>
+                <div className='text-[25px] text-[#F9F9F9] font-bold mt-[10px]'>Popular on TinyMoviez</div>
+                <Slider  {...multiSlider} >
+                    <MultiSlider title='Loki' back={ricknmorty} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={ricknmorty} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={ricknmorty} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={ricknmorty} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={loki} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={loki} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={loki} ep='6 Ep' genre='Genre' />
+                    <MultiSlider title='Loki' back={loki} ep='6 Ep' genre='Genre' />
+                </Slider>
+            </div>
         </div>
     );
 };

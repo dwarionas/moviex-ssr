@@ -1,10 +1,18 @@
 import React from 'react';
 
+import { Link, useLocation } from 'react-router-dom';
+
 import Icon from "../Icon";
 
 import logo from '../../assets/imgs/logo.svg'
 
-const NavigationSide = () => {
+const Navigation = () => {
+    const { pathname } = useLocation();
+    const splittedLocation = pathname.split("/");
+
+    const activeLink = (location, link) => location === link ? "text-[#00B9AE]" : "text-[#B2B3B6]";
+    const activeBorder = (location, link) => location === link ? "border-x-[#00B9AE] border-r-2" : "";
+
     return (
         <div className='LeftSide pl-[30px] w-[252px] bg-[#21242D] border-x-[#2D2E34] border-r'>
             <img className='mt-[20px]' src={logo} alt='Logo' />
@@ -13,24 +21,32 @@ const NavigationSide = () => {
                 <div className='text-[15px] text-[#B2B3B6]'>Menu</div>
 
                 <div className='mt-[10px]'>
-                    <div className='flex mt-[20px] border-x-[#00B9AE] border-r-2'>
+                    <div className={`flex mt-[20px] ${activeBorder(splittedLocation[1], "")}`}>
                         <Icon path='imgs/home.svg' />
-                        <div className='ml-[14px] text-[13px] text-[#00B9AE]'><a href='#'>Home</a></div>
+                        <div className={`ml-[14px] text-[13px] ${activeLink(splittedLocation[1], "")}`}>
+                            <Link to='/'>Home</Link>
+                        </div>
                     </div>
 
-                    <div className='flex mt-[20px]'>
+                    <div className={`flex mt-[20px] ${activeBorder(splittedLocation[1], "discover")}`}>
                         <Icon path='imgs/discover.svg' />
-                        <div className='ml-[14px] text-[13px] text-[#B2B3B6]'><a href='#'>Discover</a></div>
+                        <div className={`ml-[14px] text-[13px] ${activeLink(splittedLocation[1], "discover")}`}>
+                            <Link to='discover'>Discover</Link>
+                        </div>
                     </div>
 
-                    <div className='flex mt-[20px]'>
+                    <div className={`flex mt-[20px] ${activeBorder(splittedLocation[1], "awards")}`}>
                         <Icon path='imgs/award.svg' />
-                        <div className='ml-[14px] text-[13px] text-[#B2B3B6]'><a href='#'>Awards</a></div>
+                        <div className={`ml-[14px] text-[13px] ${activeLink(splittedLocation[1], "awards")}`}>
+                            <Link to='awards'>Awards</Link>
+                        </div>
                     </div>
 
-                    <div className='flex mt-[20px]'>
+                    <div className={`flex mt-[20px] ${activeBorder(splittedLocation[1], "celebrities")}`}>
                         <Icon path='imgs/celebrities.svg' />
-                        <div className='ml-[14px] text-[13px] text-[#B2B3B6]'><a href='#'>Celebrities</a></div>
+                        <div className={`ml-[14px] text-[13px] ${activeLink(splittedLocation[1], "celebrities")}`}>
+                            <Link to='celebrities'>Celebrities</Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,4 +106,4 @@ const NavigationSide = () => {
     );
 };
 
-export default NavigationSide;
+export default Navigation;

@@ -1,13 +1,16 @@
-import NavigationSide from "./components/NavigationSide/NavigationSide";
-import MainContent from "./components/MainContent/MainContent";
-import RSide from "./components/PersonalSide/RSide";
+import React from "react";
+
+import Navigation from "./components/navigation/Navigation";
+import MainContent from "./components/main/MainContent";
+import PersonalContent from "./components/personal/PersonalContent";
+
 
 function App() {
     return (
         <div className="App flex justify-between h-screen">
-            <NavigationSide/>
+            <Navigation/>
             <MainContent/>
-            <RSide/>
+            <PersonalContent/>
         </div>
     );
 }

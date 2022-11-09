@@ -2,10 +2,10 @@ import React from 'react';
 
 import Slider from "react-slick";
 
-import FirstSlider from "./FirstSlider";
+import FirstSlider from "../sliders/FirstSlider";
 import Title from "./Title";
-import SecondSlider from "./SecondSlider";
-import ThirdSlide from "./ThirdSlide";
+import SecondSlider from "../sliders/SecondSlider";
+import ThirdSlide from "../sliders/ThirdSlide";
 
 import notification from '../../assets/imgs/notification.svg'
 import vectorDown from '../../assets/imgs/vectorDown.svg'
@@ -16,7 +16,7 @@ import supernatural from '../../assets/imgs/supernatural.png'
 
 
 
-const RSide = () => {
+const PersonalContent = () => {
 
     const settings = {
         dots: false,
@@ -128,4 +128,4 @@ const RSide = () => {
     );
 };
 
-export default RSide;
+export default PersonalContent;

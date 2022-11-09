@@ -17,7 +17,6 @@ import supernatural from '../../assets/imgs/supernatural.png'
 
 
 const PersonalContent = () => {
-
     const settings = {
         dots: false,
         infinite: false,
@@ -39,7 +38,7 @@ const PersonalContent = () => {
     const genresPrev = () => genresRef.current.slickPrev();
 
     return (
-        <div className='RightSide w-[360px] bg-[#21242D] pt-[5px] pl-[30px]'>
+        <div className='RightSide w-[20%] bg-[#21242D] pt-[5px] pl-[30px]'>
             <div className='header flex justify-between mt-[8px] pr-[30px]'>
                 <div className='parent w-[40px] h-[40px] bg-[#F9F9F9] rounded-md pt-[10px]'>
                     <img className='child m-0 m-auto cursor-pointer w-[15px]' src={notification} alt='notification'/>

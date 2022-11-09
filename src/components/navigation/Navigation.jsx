@@ -10,12 +10,12 @@ const Navigation = () => {
     const { pathname } = useLocation();
     const splittedLocation = pathname.split("/");
 
-    const activeLink = (location, link) => location === link ? "text-[#00B9AE]" : "text-[#B2B3B6]";
-    const activeBorder = (location, link) => location === link ? "border-x-[#00B9AE] border-r-2" : "";
+    const activeLink = (location, current) => location === current ? "text-[#00B9AE]" : "text-[#B2B3B6]";
+    const activeBorder = (location, current) => location === current ? "border-x-[#00B9AE] border-r-2" : "";
 
     return (
-        <div className='LeftSide pl-[30px] w-[252px] bg-[#21242D] border-x-[#2D2E34] border-r'>
-            <img className='mt-[20px]' src={logo} alt='Logo' />
+        <div className='LeftSide pl-[30px] w-[15%] bg-[#21242D] border-x-[#2D2E34] border-r'>
+            <Link to='/'><img className='mt-[20px]' src={logo} alt='Logo' /></Link>
 
             <div className='mt-[20px]'>
                 <div className='text-[15px] text-[#B2B3B6]'>Menu</div>

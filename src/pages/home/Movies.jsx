@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import Slider from "react-slick";
 import MultiSlider from "../../components/sliders/MultiSlider";
@@ -17,6 +18,10 @@ import nextbtn from '../../assets/imgs/nextbtn.svg'
 
 
 const Movies = () => {
+    // const API_TOKEN = 'mGReORSyXAoi5DA9l8JbyuLZGEZNz9yZ';
+
+    // const [res, setRes] = React.useState([]);
+
     const singleSlider = {
         arrows: false,
         dots: true,
@@ -49,6 +54,24 @@ const Movies = () => {
     const slideRef = React.useRef();
     const goNext = () => slideRef.current.slickNext();
     const goPrev = () => slideRef.current.slickPrev();
+
+    // React.useEffect(() => {
+    //     const getData = async () => {
+    //         const { data } = await axios.get(`https://videocdn.tv/api/movies?api_token${API_TOKEN}`, {
+    //             headers: {
+    //                 'Access-Control-Allow-Origin': '*',
+    //                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+    //                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    //             }
+    //         });
+
+    //         setRes(data);
+    //     };
+
+    //     getData();
+    // }, []);
+
+    // console.log(res)
 
     return (
       <>

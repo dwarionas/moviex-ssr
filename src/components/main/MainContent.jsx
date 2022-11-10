@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 
 import Home from '../../pages/home/Home';
 import Awards from '../../pages/awards/Awards';
@@ -16,7 +16,8 @@ import Streaming from '../../pages/home/Streaming';
 const MainContent = () => {
     return (
         <div className='MainContent pl-[30px] pt-[5px] pr-[30px] pb-[68px] w-[65%] bg-[#16181E] border-x-[#2D2E34] border-r'>
-            <Routes>
+            <Home/>
+            {/* <Routes>
                 <Route path='/' element={<Home />} >
                     <Route path='/' element={<Movies/>} />
                     <Route path='streaming' element={<Streaming/>} />
@@ -25,8 +26,9 @@ const MainContent = () => {
                 <Route path='awards' element={<Awards />} />
                 <Route path='celebrities' element={<Celebrities />} />
                 <Route path='discover' element={<Discover />} />
+
                 <Route path="*" element={<NotFound/>} />
-            </Routes>
+            </Routes> */}
         </div>
     )
 }
